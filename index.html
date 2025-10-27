@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CESA GCEK - Official Site</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* SOPHISTICATED & PROFESSIONAL THEME */
+        :root {
+            --primary-color: #17425f; /* Deep Steel Blue/Slate */
+            --accent-color: #ffd700;  /* Muted Gold/Professional Yellow */
+            --light-bg: #f4f6f9;      /* Off-White for body background */
+            --hero-bg: #1c5275;       /* Slightly lighter blue for the Hero section */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .btn-primary:hover { background-color: #113349; } 
+        
+        html { scroll-behavior: smooth; }
+        
+        /* Custom card styling for the 3 programs section */
+        .program-card {
+            min-height: 280px;
+            transition: all 0.3s ease;
+            /* Structural top border in Gold */
+            border-top: 5px solid var(--accent-color); 
+            box-shadow: 0 8px 16px rgba(23, 66, 95, 0.15); 
+            background-color: white;
+        }
+        .program-card:hover {
+            box-shadow: 0 15px 25px -3px rgba(0, 0, 0, 0.2), 0 6px 10px -2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Hero Section Background Style: PLAIN BACKGROUND AS REQUESTED */
+        .hero-bg {
+            background-image: none;
+            background-color: var(--hero-bg); /* Use a solid color */
+            position: relative;
+        }
+        .hero-overlay {
+            /* Not needed for solid color background, but kept for structure */
+            background-color: transparent; 
+        }
+
+        /* Committee member styling */
+        .member-photo {
+            cursor: default; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-color); /* Gold border on photos */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-extrabold text-primary">CESA GCEK</span>
+                </a>
+                
+                <!-- Desktop Menu Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#programs" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Programs</a>
+                        <a href="#updates" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Updates</a>
+                        <a href="#students-body" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Student Body</a>
+                        <a href="#contact" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white bg-primary hover:bg-primary/80" aria-controls="mobile-menu" aria-expanded="false">
+                        <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-800 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#programs" class="text-gray-800 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Programs</a>
+                <a href="#updates" class="text-gray-800 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Student Body</a>
+                <a href="#students-body" class="text-gray-800 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Student Body</a>
+                <a href="#contact" class="text-gray-800 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section (Logo & Association Info) - Plain Background -->
+    <section id="home" class="pt-24 pb-16 hero-bg">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Logo/Image Placeholder - Replace src with your CESA logo URL -->
+            <div class="mb-8">
+                <img src="https://placehold.co/150x150/17425f/ffd700?text=CESA+LOGO" 
+                     onerror="this.src='https://placehold.co/150x150/17425f/ffd700?text=LOGO'" 
+                     class="mx-auto rounded-full shadow-2xl border-4 member-photo"
+                     alt="CESA GCEK Logo">
+            </div>
+            
+            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight mb-4 text-white leading-tight">
+                Engineered for <span style="color: var(--accent-color);">Excellence.</span> Built to Last.
+            </h1>
+            <p class="text-xl text-gray-200 mb-10 max-w-4xl mx-auto">
+                The Civil Engineering Students Association (CESA) at Government College of Engineering, Karad, is dedicated to fostering structural expertise, promoting industry readiness, and cultivating the next generation of infrastructure leaders.
+            </p>
+            <a href="#programs" class="px-8 py-3 text-lg font-semibold text-primary rounded-xl shadow-lg transition duration-300 hover:shadow-xl" style="background-color: var(--accent-color);">
+                Discover Our Programs
+            </a>
+        </div>
+    </section>
+    
+    <!-- 2. Programs/Activities Section (3 Vertical Rectangles) -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-primary">Our Core Technical Programs</h2>
+                <p class="mt-3 text-lg text-gray-500">Structured activities focusing on design, precision, and industry application.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Program 1: Structural Events (Columns/Structure) -->
+                <div class="p-6 rounded-xl shadow-lg program-card">
+                    <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 mb-4" style="color: var(--primary-color);">
+                        <i data-lucide="columns" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Technical Competitions</h3>
+                    <p class="text-gray-600">Hosting technical fests, challenging design-build competitions (like bridge modeling), and quizzes to test structural theory and application.</p>
+                    <a href="#" class="mt-4 inline-block font-semibold hover:underline text-primary">View Design Challenges &rarr;</a>
+                </div>
+
+                <!-- Program 2: Guest Lectures (Industry/Building) -->
+                <div class="p-6 rounded-xl shadow-lg program-card">
+                    <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 mb-4" style="color: var(--primary-color);">
+                        <i data-lucide="building-2" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Industry Insights</h3>
+                    <p class="text-gray-600">Inviting expert speakers from the construction industry and urban planning sectors for crucial, up-to-date market perspectives.</p>
+                    <a href="#" class="mt-4 inline-block font-semibold hover:underline text-primary">See Speakers &rarr;</a>
+                </div>
+
+                <!-- Program 3: Workshops (Precision/Ruler) -->
+                <div class="p-6 rounded-xl shadow-lg program-card">
+                    <div class="flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 mb-4" style="color: var(--primary-color);">
+                        <i data-lucide="ruler" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Software Workshops</h3>
+                    <p class="text-gray-600">Practical, hands-on training sessions focused on essential software (AutoCAD, STAAD Pro, Revit) and advanced surveying techniques.</p>
+                    <a href="#" class="mt-4 inline-block font-semibold hover:underline text-primary">Register Now &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Notifications & Updates Section (Bolder Highlight) -->
+    <section id="updates" class="py-16 bg-gray-100"> 
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border-l-8 p-8 rounded-xl shadow-xl" style="border-color: var(--accent-color);">
+                <div class="flex items-start">
+                    <i data-lucide="megaphone" class="h-8 w-8 mr-5 flex-shrink-0" style="color: var(--primary-color);"></i>
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-2">LATEST: CESA TechFest 2025 Registration Open</h3>
+                        <p class="text-lg text-gray-700">The most anticipated event of the year, *CESA TechFest 2025, is live! Register for all technical competitions and seminars now. **Check the notice board for schedules.*</p>
+                        <a href="#" class="mt-3 inline-block font-semibold hover:underline" style="color: var(--accent-color);">Read Full Announcement &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Student Body Section (Structured Look) -->
+    <section id="students-body" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-primary">The 2025-2026 CESA Student Body</h2>
+                <p class="mt-3 text-lg text-gray-500">The dedicated team leading the association's events and initiatives.</p>
+            </div>
+            
+            <!-- Grid for 19 Position Holders -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                
+                <!-- NOTE TO DEVELOPER: To link an image, replace the 'src' value with the direct URL of the pre-uploaded photo. E.g., src="https://yourhost.com/images/pratik_photo.jpg" -->
+
+                <!-- 1. President (Rutuja Thombare) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=PRES" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Rutuja Thombare">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Rutuja Thombare</h4>
+                    <p class="font-bold text-sm text-primary">President</p>
+                    <p class="text-xs text-gray-500">Final Year</p>
+                </div>
+
+                <!-- 2. Vice President (Pratik Kshirsagar) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=VP" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Pratik Kshirsagar">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Pratik Kshirsagar</h4>
+                    <p class="font-bold text-sm text-primary">Vice President</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+                
+                <!-- 3. Secretary (Simran Alkunte) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=SEC" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Simran Alkunte">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Simran Alkunte</h4>
+                    <p class="font-bold text-sm text-primary">Secretary</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+
+                <!-- 4. Joint Secretary (Anuradha Patil) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=JSEC" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Anuradha Patil">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Anuradha Patil</h4>
+                    <p class="font-bold text-sm text-primary">Joint Secretary</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+
+                <!-- 5. Treasurer (Rohan Salunke) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=TR" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Rohan Salunke">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Rohan Salunke</h4>
+                    <p class="font-bold text-sm text-primary">Treasurer</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+                
+                <!-- 6. Outreach and Publicity Coordinator (Pavan Janbhare) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=OPC1" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Pavan Janbhare">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Pavan Janbhare</h4>
+                    <p class="font-bold text-sm text-primary">Outreach & Publicity Coordinator</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+
+                <!-- 7. Outreach and Publicity Coordinator (Ajit Mali) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src=<img src="https://drive.google.com/uc?export=view&id=1ofEnSZrLk3oyoQ9Xa7Jan57pNgV4Glx6" alt="Image" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Ajit Mali</h4>
+                    <p class="font-bold text-sm text-primary">Outreach & Publicity Coordinator</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+                
+                <!-- 8. Outreach and Publicity Coordinator (Gauri Bhandare) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=OPC3" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Gauri Bhandare">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Gauri Bhandare</h4>
+                    <p class="font-bold text-sm text-primary">Outreach & Publicity Coordinator</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+
+                <!-- 9. Ladies representative (Shraddha Chivate) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=LR" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Shraddha Chivate">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Shraddha Chivate</h4>
+                    <p class="font-bold text-sm text-primary">Ladies representative</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+                
+                <!-- 10. Coordinator (Attar Intikhabalam) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C10" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Attar Intikhabalam">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Attar Intikhabalam</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Final Year</p>
+                </div>
+
+                <!-- 11. Coordinator (Yogita Yadav) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://i.postimg.cc/bNPSqWBV/IMG-20251027-211817-970.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Yogita Yadav">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Yogita Yadav</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Final Year</p>
+                </div>
+
+                <!-- 12. Coordinator (Priya Munde) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C12" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Priya Munde">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Priya Munde</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+
+                <!-- 13. Coordinator (Amrut Ghanwat) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src= class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Amrut Ghanwat">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Amrut Ghanwat</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Third Year</p>
+                </div>
+                
+                <!-- 14. Coordinator (Shreeyash Mali) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C14" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Shreeyash Mali">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Shreeyash Mali</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+
+                <!-- 15. Coordinator (Siddhi Patil) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C15" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Siddhi Patil">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Siddhi Patil</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+                
+                <!-- 16. Coordinator (Vedika Patil) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C16" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Vedika Patil">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Vedika Patil</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+                
+                <!-- 17. Coordinator (Shubham Gadekar) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C17" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Shubham Gadekar">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Shubham Gadekar</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+                
+                <!-- 18. Coordinator (Bhakti Ghadage) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C18" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Bhakti Ghadage">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Bhakti Ghadage</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+                
+                <!-- 19. Coordinator (Priti Malwade) -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-200">
+                    <img src="https://placehold.co/100x100/17425f/ffd700?text=C19" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 member-photo" alt="Priti Malwade">
+                    <h4 class="text-lg font-semibold text-gray-900 truncate">Priti Malwade</h4>
+                    <p class="font-bold text-sm text-primary">Coordinator</p>
+                    <p class="text-xs text-gray-500">Second Year</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 5. Footer (Contact and Address) -->
+    <footer id="contact" class="text-white py-12 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4" style="color: var(--accent-color);">Contact CESA</h3>
+                <p class="mb-2 flex items-center text-gray-200">
+                    <i data-lucide="mail" class="w-5 h-5 mr-3 text-gray-300"></i>
+                    Email: <a href="mailto:cesa.gcek@gcek.ac.in" class="ml-2 hover:text-accent-color">cesa.gcek@gcek.ac.in</a>
+                </p>
+                <p class="mb-2 flex items-center text-gray-200">
+                    <i data-lucide="phone" class="w-5 h-5 mr-3 text-gray-300"></i>
+                    Phone: +91 98765 43210 (Faculty Advisor)
+                </p>
+                <div class="flex space-x-4 mt-4">
+                    <!-- Social Media Links -->
+                    <a href="#" target="_blank" class="hover:text-accent-color transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="hover:text-accent-color transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4" style="color: var(--accent-color);">Our Location</h3>
+                <address class="not-italic text-gray-200">
+                    Civil Engineering Department,<br>
+                    Government College of Engineering, Karad<br>
+                    Vidyanagar, Karad, Satara, Maharashtra - 415124, India
+                </address>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4" style="color: var(--accent-color);">Find Us</h3>
+                <div class="bg-primary/50 h-32 w-full rounded-lg flex items-center justify-center text-sm text-gray-100 border border-primary/75">
+                    [Embedded Google Map Location]
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-10 border-t border-primary/75 pt-6">
+            <p class="text-sm text-gray-400">&copy; 2025 CESA GCEK. All rights reserved. | Built for Structural Stability.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+            
+            // Mobile Menu Toggle Logic
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('hidden');
+                
+                // Change icon from menu to X
+                const iconElement = button.querySelector('i');
+                if (isExpanded) {
+                    iconElement.innerHTML = lucide.icons['menu'].toSvg();
+                } else {
+                    iconElement.innerHTML = lucide.icons['x'].toSvg();
+                }
+            });
+            
+            // Close mobile menu when a link is clicked
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        button.setAttribute('aria-expanded', 'false');
+                        button.querySelector('i').innerHTML = lucide.icons['menu'].toSvg();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
